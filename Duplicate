@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+
+public class Solution {
+
+	public static int findDuplicate(ArrayList<Integer> arr) {
+
+		//    Write your code here.
+		
+		int maxelement=0;
+		for(int num:arr)
+		{
+			if(num>maxelement)
+			{
+				maxelement=num;
+			}
+		}
+		int []freq=new int[maxelement+1];
+		for(int num:arr)
+		{
+			freq[num]++;
+		}
+		for(int num:arr)
+		{
+			if(freq[num]==2)
+			{
+				return num;
+			}
+		}
+		return -1;
+	}
+}
