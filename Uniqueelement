@@ -1,0 +1,30 @@
+public class Solution{  
+
+    public static int findUnique(int[] arr){
+		//Your code goes here
+     int maxElement = 0;
+        for (int num : arr) {
+            if (num > maxElement) {
+                maxElement = num;
+            }
+        }
+
+        // Create and populate the frequency array
+        int[] freq = new int[maxElement + 1]; // Size is maxElement + 1 to handle values from 0 to maxElement
+
+        // Populate the frequency array
+        for (int num : arr) {
+            freq[num]++;
+        }
+
+        // Find and return the first unique element
+        for (int num : arr) {
+            if (freq[num] == 1) {
+                return num;
+            }
+        }
+
+        // Return null if no unique element is found
+        return -1;
+}
+}
