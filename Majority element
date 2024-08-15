@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.* ;
+
+public class Solution {
+	public static int findMajority(int[] arr, int n) {
+		// Write your code here.
+		for(int i=0;i<n;i++)
+		{
+			int maxcount=0;
+			for(int j=i;j<n;j++)
+			{
+				if(arr[i]==arr[j])
+				{
+					maxcount++;
+				}
+			}
+			if(maxcount>n/2)
+			{
+				return arr[i];
+			}
+		}
+		return -1;
+	}
+}
